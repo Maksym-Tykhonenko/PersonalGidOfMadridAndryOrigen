@@ -10,6 +10,7 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
+  ImageBackground
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useIsFocused, useNavigation} from '@react-navigation/native';
@@ -70,7 +71,9 @@ export const RestaurantsScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View  style={{flex:1}}>
+      <ImageBackground style={{ flex: 1 }} source={require('../assets/newDiz/bg.jpg')}>
+      <View style={styles.container}>
       <Text style={styles.title}>Restaurants</Text>
       <Text style={styles.subtitle}>
         Discover the best dining spots in Madrid.
@@ -159,13 +162,16 @@ export const RestaurantsScreen = () => {
         </View>
       </Modal>
     </View>
+      </ImageBackground>
+      </View>
+    
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1e1e1e',
+    //backgroundColor: '#1e1e1e',
     padding: 20,
     paddingVertical: 40,
     paddingBottom: 0,

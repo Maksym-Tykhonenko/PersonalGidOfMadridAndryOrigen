@@ -7,6 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Alert,
+  ImageBackground
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -34,9 +35,11 @@ export const EventDetails = ({route, navigation}: any) => {
   };
 
   return (
-    <ScrollView
+    <View  style={{flex:1}}>
+      <ImageBackground style={{ flex: 1 }} source={require('../assets/newDiz/bg.jpg')}>
+      <ScrollView
       showsVerticalScrollIndicator={false}
-      style={{backgroundColor: '#1e1e1e'}}
+      style={{}}
       contentContainerStyle={styles.container}>
       <Image source={{uri: event.image}} style={styles.image} />
       <Text style={styles.title}>{event.title}</Text>
@@ -70,12 +73,15 @@ export const EventDetails = ({route, navigation}: any) => {
         <Text style={styles.buttonText}>Go Back</Text>
       </TouchableOpacity>
     </ScrollView>
+      </ImageBackground>
+      </View>
+    
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1e1e1e',
+    //backgroundColor: '#1e1e1e',
     padding: 20,
     alignItems: 'center',
     paddingVertical: 40,

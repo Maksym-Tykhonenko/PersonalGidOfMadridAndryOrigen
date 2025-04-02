@@ -7,6 +7,7 @@ import {
   Image,
   Button,
   TouchableOpacity,
+  ImageBackground
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -80,7 +81,9 @@ export const EventsScreen = ({navigation}: any) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View  style={{flex:1}}>
+      <ImageBackground style={{ flex: 1 }} source={require('../assets/newDiz/bg.jpg')}>
+      <View style={styles.container}>
       <Text style={styles.title}>Events</Text>
       <Text style={styles.subtitle}>
         Stay updated on the latest events happening in Madrid.
@@ -100,13 +103,16 @@ export const EventsScreen = ({navigation}: any) => {
         )}
       />
     </View>
+      </ImageBackground>
+      </View>
+    
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1e1e1e',
+    //backgroundColor: '#1e1e1e',
     padding: 20,
     paddingVertical: 40,
     paddingBottom: 0,

@@ -7,6 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
+  ImageBackground
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as ImagePicker from 'react-native-image-picker';
@@ -74,7 +75,9 @@ export const ProfileScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View  style={{flex:1}}>
+      <ImageBackground style={{ flex: 1 }} source={require('../assets/newDiz/bg.jpg')}>
+      <View style={styles.container}>
       <Text style={styles.title}>Profile</Text>
       <Image
         source={profile.image ? {uri: profile.image} : {}}
@@ -106,6 +109,9 @@ export const ProfileScreen = () => {
         <Text style={styles.buttonText}>Clear Profile</Text>
       </TouchableOpacity>
     </View>
+      </ImageBackground>
+      </View>
+    
   );
 };
 
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#1e1e1e',
+    //backgroundColor: '#1e1e1e',
     padding: 20,
   },
   title: {

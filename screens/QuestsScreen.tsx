@@ -9,6 +9,7 @@ import {
   TextInput,
   Button,
   Alert,
+  ImageBackground
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useIsFocused} from '@react-navigation/native';
@@ -138,7 +139,9 @@ export const QuestsScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View  style={{flex:1}}>
+      <ImageBackground style={{ flex: 1 }} source={require('../assets/newDiz/bg.jpg')}>
+      <View style={styles.container}>
       <Text style={styles.title}>Quests</Text>
       <Text style={styles.subtitle}>
         Complete challenges and explore Madrid!
@@ -187,13 +190,16 @@ export const QuestsScreen = () => {
         </View>
       </Modal>
     </View>
+      </ImageBackground>
+      </View>
+    
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1e1e1e',
+    //backgroundColor: '#1e1e1e',
     padding: 20,
     paddingVertical: 40,
     paddingBottom: 0,

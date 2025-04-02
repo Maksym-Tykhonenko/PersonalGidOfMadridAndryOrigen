@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   Pressable,
+  ImageBackground,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useIsFocused, useNavigation} from '@react-navigation/native';
@@ -81,10 +82,12 @@ export const HomeScreen = () => {
   }, [focus]);
 
   return (
-    <ScrollView
+    <View  style={{flex:1}}>
+      <ImageBackground style={{flex:1}} source={require('../assets/newDiz/bg.jpg')}>
+         <ScrollView
       showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.container}
-      style={{paddingVertical: 40, backgroundColor: '#1e1e1e'}}>
+      style={{paddingVertical: 40, }}>
       <Text style={styles.title}>Welcome to Gran Madrid</Text>
       <Text style={styles.subtitle}>
         Explore Madrid’s top restaurants, cultural landmarks, and exciting
@@ -138,12 +141,15 @@ export const HomeScreen = () => {
         </Text>
       </View>
     </ScrollView>
+      </ImageBackground>
+    </View>
+   
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1e1e1e',
+    //backgroundColor: '#1e1e1e',
     padding: 20,
     paddingBottom: 50,
   },

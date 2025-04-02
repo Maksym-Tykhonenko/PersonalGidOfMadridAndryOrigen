@@ -760,8 +760,7 @@ export default function App() {
           duration: 7500,
           useNativeDriver: true,
         }).start();
-        //setLouderIsEnded(true);
-      }, 500);
+      }, 7500);
     }, []);
 
     useEffect(() => {

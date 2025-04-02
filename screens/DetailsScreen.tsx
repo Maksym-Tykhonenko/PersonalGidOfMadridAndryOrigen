@@ -9,6 +9,7 @@ import {
   TextInput,
   FlatList,
   Alert,
+  ImageBackground
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -66,9 +67,11 @@ export const DetailsScreen = ({route, navigation}: any) => {
   };
 
   return (
-    <ScrollView
+    <View  style={{flex:1}}>
+      <ImageBackground style={{ flex: 1 }} source={require('../assets/newDiz/bg.jpg')}>
+        <ScrollView
       showsVerticalScrollIndicator={false}
-      style={{backgroundColor: '#1e1e1e'}}
+      style={{}}
       contentContainerStyle={styles.container}>
       <Image source={{uri: restaurant.image}} style={styles.image} />
       <Text style={styles.title}>{restaurant.name}</Text>
@@ -124,12 +127,15 @@ export const DetailsScreen = ({route, navigation}: any) => {
         <Text style={styles.buttonText}>Go Back</Text>
       </TouchableOpacity>
     </ScrollView>
+      </ImageBackground>
+      </View>
+    
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1e1e1e',
+    //backgroundColor: '#1e1e1e',
     padding: 20,
     paddingVertical: 40,
     alignItems: 'center',
