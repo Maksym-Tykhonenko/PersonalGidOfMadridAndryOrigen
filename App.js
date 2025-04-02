@@ -766,7 +766,7 @@ export default function App() {
 
     useEffect(() => {
       setTimeout(() => {
-        setLouderIsEnded(true);
+        //setLouderIsEnded(true);
       }, 8000);
     }, []);
 
